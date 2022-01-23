@@ -1,5 +1,5 @@
 {
-  "version": "0.3.14",
+  "version": "0.3.15",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -34,9 +34,9 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "@volst/react-native-tuya",
+  "name": "@ngotientan/react-native-tuya",
   "description": "React Native bindings for the Tuya SDK",
-  "homepage": "https://github.com/Volst/react-native-tuya#readme",
+  "homepage": "https://github.com/TanNgo811/react-native-tuya#readme",
   "author": "Kees Kluskens",
   "module": "dist/react-native-tuya.esm.js",
   "devDependencies": {

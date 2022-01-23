@@ -87,3 +87,8 @@ export function getDataPointStat(
 ): Promise<any> {
   return tuya.getDataPointStat(params);
 }
+
+export function getDeviceData(params: any): Promise<any> {
+  return tuya.getDeviceData(params);
+}
+
