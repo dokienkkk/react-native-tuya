@@ -287,7 +287,6 @@ class TuyaUserModule(reactContext: ReactApplicationContext) : ReactContextBaseJa
         }
     }
 
-
     /* 上传用户头像*/
     @ReactMethod
     fun uploadUserAvatar(params: ReadableMap, promise: Promise) {
@@ -303,6 +302,32 @@ class TuyaUserModule(reactContext: ReactApplicationContext) : ReactContextBaseJa
         if (ReactParamsCheck.checkParams(arrayOf(TEMPUNITENUM), params)) {
             TuyaHomeSdk.getUserInstance().setTempUnit(TempUnitEnum.valueOf(params.getString(TEMPUNITENUM) as String), getIResultCallback(promise))
         }
+    }
+
+    /* Register & Login Anonymous Account*/
+    @ReactMethod
+    fun touristRegisterAndLogin(params: ReadableMap, promise: Promise) {
+      if (ReactParamsCheck.checkParams(arrayOf(COUNTRYCODE, NICKNAME), params)) {
+        TuyaHomeSdk.getUserInstance().touristRegisterAndLogin(
+          params.getString(COUNTRYCODE),
+          params.getString(NICKNAME),
+          getRegisterCallback(promise)
+        )
+      }
+    }
+
+    /* Register & Login Anonymous Account*/
+    @ReactMethod
+    fun touristBindWithUserName(params: ReadableMap, promise: Promise) {
+      if (ReactParamsCheck.checkParams(arrayOf(COUNTRYCODE, USERNAME, VERIFYCODE, PASSWORD), params)) {
+        TuyaHomeSdk.getUserInstance().touristBindWithUserName(
+          params.getString(COUNTRYCODE),
+          params.getString(USERNAME),
+          params.getString(VERIFYCODE),
+          params.getString(PASSWORD),
+          getIBooleanCallback(promise)
+        )
+      }
     }
 
 

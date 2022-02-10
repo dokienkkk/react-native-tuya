@@ -44,6 +44,26 @@ export function cancelAccount(): Promise<string> {
   return tuya.cancelAccount();
 }
 
+export function touristRegisterAndLogin(params: TouristRegisterAndLoginParams): Promise<any> {
+  return tuya.touristRegisterAndLogin(params)
+}
+
+export function touristBindWithUserName(params: TouristBindWithUserNameParams): Promise<any> {
+  return tuya.touristBindWithUserName(params)
+}
+
+export type TouristRegisterAndLoginParams = {
+  countryCode: string;
+  nickName: string;
+}
+
+export type TouristBindWithUserNameParams = {
+  countryCode: string;
+  userName: string;
+  verifyCode: string;
+  password: string;
+}
+
 export type User = {
   email: string;
   username: string;
