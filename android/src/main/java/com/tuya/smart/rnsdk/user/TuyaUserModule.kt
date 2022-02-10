@@ -20,6 +20,9 @@ import com.tuya.smart.rnsdk.utils.Constant.TOKEN
 import com.tuya.smart.rnsdk.utils.Constant.UID
 import com.tuya.smart.rnsdk.utils.Constant.USERID
 import com.tuya.smart.rnsdk.utils.Constant.VALIDATECODE
+import com.tuya.smart.rnsdk.utils.Constant.VERIFYCODE
+import com.tuya.smart.rnsdk.utils.Constant.NICKNAME
+import com.tuya.smart.rnsdk.utils.Constant.USERNAME
 import com.tuya.smart.rnsdk.utils.Constant.getIResultCallback
 import com.tuya.smart.rnsdk.utils.ReactParamsCheck
 import com.tuya.smart.rnsdk.utils.TuyaReactUtils
