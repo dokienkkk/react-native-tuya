@@ -92,3 +92,20 @@ export function getDeviceData(params: any): Promise<any> {
   return tuya.getDeviceData(params);
 }
 
+export type GetDataPointsParams = {
+  dpId: string,
+  devId?: string,
+}
+
+export function getDp(params: GetDataPointsParams): Promise<any> {
+  return tuya.getDp(params)
+}
+
+export type GetDataPointListParams = {
+  dpId: string,
+  devId?: string,
+}
+
+export function getDpList(params: GetDataPointListParams): Promise<any> {
+  return tuya.getDpList(params);
+}

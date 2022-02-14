@@ -133,6 +133,16 @@ class TuyaDeviceModule(reactContext: ReactApplicationContext) : ReactContextBase
         }
     }
 
+  @ReactMethod
+  fun getDpList(params: ReadableMap, promise: Promise) {
+    if (ReactParamsCheck.checkParams(arrayOf(DEVID, DPID), params)) {
+      promise.resolve(getDevice(params.getString(DEVID) as String)?.getDpList(
+        params.getString(DPID),
+        getIResultCallback(promise)
+      ))
+    }
+  }
+
     @ReactMethod
     fun renameDevice(params: ReadableMap, promise: Promise) {
         if (ReactParamsCheck.checkParams(arrayOf(DEVID, NAME), params)) {
