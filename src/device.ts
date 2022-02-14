@@ -102,7 +102,7 @@ export function getDp(params: GetDataPointsParams): Promise<any> {
 }
 
 export type GetDataPointListParams = {
-  dpId: string,
+  dpId: string[],
   devId?: string,
 }
 

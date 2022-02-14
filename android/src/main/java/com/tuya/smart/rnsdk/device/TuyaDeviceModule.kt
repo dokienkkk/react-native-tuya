@@ -137,7 +137,7 @@ class TuyaDeviceModule(reactContext: ReactApplicationContext) : ReactContextBase
   fun getDpList(params: ReadableMap, promise: Promise) {
     if (ReactParamsCheck.checkParams(arrayOf(DEVID, DPID), params)) {
       promise.resolve(getDevice(params.getString(DEVID) as String)?.getDpList(
-        params.getString(DPID),
+        params.getArray(DPID),
         getIResultCallback(promise)
       ))
     }
