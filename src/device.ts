@@ -100,12 +100,3 @@ export type GetDataPointsParams = {
 export function getDp(params: GetDataPointsParams): Promise<any> {
   return tuya.getDp(params)
 }
-
-export type GetDataPointListParams = {
-  dpId: string[],
-  devId?: string,
-}
-
-export function getDpList(params: GetDataPointListParams): Promise<any> {
-  return tuya.getDpList(params);
-}

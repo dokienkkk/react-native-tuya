@@ -52,6 +52,17 @@ export function touristBindWithUserName(params: TouristBindWithUserNameParams): 
   return tuya.touristBindWithUserName(params)
 }
 
+export function sendVerifyCodeWithUserName(params: SendVerifyCodeWithUsername) {
+  return tuya.sendVerifyCodeWithUserName(params)
+}
+
+export type SendVerifyCodeWithUsername = {
+  countryCode: string;
+  userName: string;
+  region: string;
+  type: number;
+}
+
 export type TouristRegisterAndLoginParams = {
   countryCode: string;
   nickName: string;

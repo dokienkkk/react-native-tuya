@@ -333,6 +333,20 @@ class TuyaUserModule(reactContext: ReactApplicationContext) : ReactContextBaseJa
       }
     }
 
+  /* Send Verify Code With Username */
+  @ReactMethod
+  fun sendVerifyCodeWithUserName(params: ReadableMap, promise: Promise) {
+    if (ReactParamsCheck.checkParams(arrayOf(USERNAME, REGION, COUNTRYCODE, TYPE), params)) {
+      TuyaHomeSdk.getUserInstance().sendVerifyCodeWithUserName(
+        params.getString(USERNAME),
+        params.getString(REGION),
+        params.getString(COUNTRYCODE),
+        params.getInt(TYPE),
+        getIResultCallback(promise)
+      )
+    }
+  }
+
 
     fun getLoginCallback(promise: Promise): ILoginCallback? {
         val callback = object : ILoginCallback {
