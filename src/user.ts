@@ -56,6 +56,16 @@ export function sendVerifyCodeWithUserName(params: SendVerifyCodeWithUsername) {
   return tuya.sendVerifyCodeWithUserName(params)
 }
 
+export function registerAccountWithUid(params: RegisterAccountWithUidParams): Promise<any> {
+  return tuya.touristBindWithUserName(params)
+}
+
+export type RegisterAccountWithUidParams = {
+  countryCode: string;
+  uid: string;
+  password: string;
+}
+
 export type SendVerifyCodeWithUsername = {
   countryCode: string;
   userName: string;
