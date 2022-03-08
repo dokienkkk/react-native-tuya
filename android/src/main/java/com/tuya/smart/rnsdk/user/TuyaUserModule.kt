@@ -23,6 +23,8 @@ import com.tuya.smart.rnsdk.utils.Constant.USERID
 import com.tuya.smart.rnsdk.utils.Constant.VALIDATECODE
 import com.tuya.smart.rnsdk.utils.Constant.VERIFYCODE
 import com.tuya.smart.rnsdk.utils.Constant.NICKNAME
+import com.tuya.smart.rnsdk.utils.Constant.REGION
+import com.tuya.smart.rnsdk.utils.Constant.TYPE
 import com.tuya.smart.rnsdk.utils.Constant.USERNAME
 import com.tuya.smart.rnsdk.utils.Constant.getIResultCallback
 import com.tuya.smart.rnsdk.utils.ReactParamsCheck
@@ -231,7 +233,7 @@ class TuyaUserModule(reactContext: ReactApplicationContext) : ReactContextBaseJa
                     params.getString(UID),
                     params.getString(PASSWORD),
                     params.getBoolean(ISCREATEHOME),
-                    getLoginCallback(promise))
+                    getUidLoginCallback(promise))
         }
     }
 
@@ -349,8 +351,23 @@ class TuyaUserModule(reactContext: ReactApplicationContext) : ReactContextBaseJa
     }
   }
 
+  fun getUidLoginCallback(promise: Promise): IUidLoginCallback? {
+    val callback = object : IUidLoginCallback {
+      override fun onSuccess(user: User?, homeId: Long) {
+        promise.resolve(TuyaReactUtils.parseToWritableMap(user))
+        promise.resolve(TuyaReactUtils.parseToWritableMap(homeId))
+      }
 
-    fun getLoginCallback(promise: Promise): ILoginCallback? {
+      override fun onError(code: String?, error: String?) {
+        promise.reject(code, error)
+      }
+
+    }
+    return callback
+  }
+
+
+  fun getLoginCallback(promise: Promise): ILoginCallback? {
         val callback = object : ILoginCallback {
             override fun onSuccess(user: User?) {
                 promise.resolve(TuyaReactUtils.parseToWritableMap(user))

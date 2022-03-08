@@ -28,6 +28,7 @@ object Constant {
     const val NEWPASSWORD = "newPassword"
     const val CODE = "code"
     const val UID = "uid"
+    const val REGION = "region"
     const val KEY = "key"
     const val SECRET = "secret"
     const val USERID = "userId"
