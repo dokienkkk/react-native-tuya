@@ -64,17 +64,27 @@ export function loginWithUid(params: LoginWithUidParams): Promise<any> {
   return tuya.loginWithUid(params)
 }
 
+export function loginOrRegisterWithUid(params: LoginOrRegisterWithUidParams): Promise<any> {
+  return tuya.loginOrRegisterWithUid(params)
+}
+
 export type LoginWithUidParams = {
   countryCode: string;
   uid: string;
   password: string;
 }
 
-export type RegisterAccountWithUidParams = {
+export type LoginOrRegisterWithUidParams = {
   countryCode: string;
   uid: string;
   password: string;
   isCreateHome: boolean;
+}
+
+export type RegisterAccountWithUidParams = {
+  countryCode: string;
+  uid: string;
+  password: string;
 }
 
 export type SendVerifyCodeWithUsername = {
