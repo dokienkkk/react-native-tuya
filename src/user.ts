@@ -74,6 +74,7 @@ export type RegisterAccountWithUidParams = {
   countryCode: string;
   uid: string;
   password: string;
+  isCreateHome: boolean;
 }
 
 export type SendVerifyCodeWithUsername = {

@@ -10,6 +10,7 @@ import com.tuya.smart.rnsdk.utils.Constant.CODE
 import com.tuya.smart.rnsdk.utils.Constant.COUNTRYCODE
 import com.tuya.smart.rnsdk.utils.Constant.EMAIL
 import com.tuya.smart.rnsdk.utils.Constant.FILEPATH
+import com.tuya.smart.rnsdk.utils.Constant.ISCREATEHOME
 import com.tuya.smart.rnsdk.utils.Constant.KEY
 import com.tuya.smart.rnsdk.utils.Constant.NEWPASSWORD
 import com.tuya.smart.rnsdk.utils.Constant.PASSWORD
@@ -224,11 +225,12 @@ class TuyaUserModule(reactContext: ReactApplicationContext) : ReactContextBaseJa
     /* uid 登陆和注册合并一个接口*/
     @ReactMethod
     fun loginOrRegisterWithUid(params: ReadableMap, promise: Promise) {
-        if (ReactParamsCheck.checkParams(arrayOf(COUNTRYCODE, UID, PASSWORD), params)) {
+        if (ReactParamsCheck.checkParams(arrayOf(COUNTRYCODE, UID, PASSWORD, ISCREATEHOME), params)) {
             TuyaHomeSdk.getUserInstance().loginOrRegisterWithUid(
                     params.getString(COUNTRYCODE),
                     params.getString(UID),
                     params.getString(PASSWORD),
+                    params.getBoolean(ISCREATEHOME),
                     getLoginCallback(promise))
         }
     }

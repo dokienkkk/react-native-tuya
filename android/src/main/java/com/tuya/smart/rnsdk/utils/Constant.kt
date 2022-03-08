@@ -24,6 +24,7 @@ object Constant {
     const val PHONENUMBER = "phoneNumber"
     const val VALIDATECODE = "validateCode"
     const val PASSWORD = "password"
+    const val ISCREATEHOME = "isCreateHome"
     const val NEWPASSWORD = "newPassword"
     const val CODE = "code"
     const val UID = "uid"
