@@ -75,7 +75,7 @@ export function loginWithPhonePassword(params: LoginWithPhonePasswordParams): Pr
 
 export type LoginWithPhonePasswordParams = {
   countryCode: string;
-  phone: string;
+  phoneNumber: string;
   password: string;
 }
 
