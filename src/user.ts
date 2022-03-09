@@ -68,6 +68,17 @@ export function loginOrRegisterWithUid(params: LoginOrRegisterWithUidParams): Pr
   return tuya.loginOrRegisterWithUid(params)
 }
 
+export function loginWithPhonePassword(params: LoginWithPhonePasswordParams): Promise<any> {
+  return tuya.loginWithPhonePassword(params)
+}
+
+
+export type LoginWithPhonePasswordParams = {
+  countryCode: string;
+  phone: string;
+  password: string;
+}
+
 export type LoginWithUidParams = {
   countryCode: string;
   uid: string;
