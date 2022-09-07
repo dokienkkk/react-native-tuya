@@ -1,5 +1,5 @@
 {
-  "version": "0.3.29",
+  "version": "0.3.41",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -37,7 +37,7 @@
   "name": "@ngotientan/react-native-tuya",
   "description": "React Native bindings for the Tuya SDK",
   "homepage": "https://github.com/TanNgo811/react-native-tuya#readme",
-  "author": "Kees Kluskens",
+  "author": "Tan Ngo",
   "module": "dist/react-native-tuya.esm.js",
   "devDependencies": {
     "@types/jest": "^25.1.2",

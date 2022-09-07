@@ -82,6 +82,10 @@ export type GetDataPointStatsParams = {
   startTime: number; // in ms
 };
 
+export type GetDeviceParams = {
+  devId: string;
+};
+
 export function getDataPointStat(
   params: GetDataPointStatsParams
 ): Promise<any> {
@@ -90,6 +94,10 @@ export function getDataPointStat(
 
 export function getDeviceData(params: any): Promise<any> {
   return tuya.getDeviceData(params);
+}
+
+export function getDevice(params: GetDeviceParams): Promise<any> {
+  return tuya.getDevice(params);
 }
 
 export type GetDataPointsParams = {

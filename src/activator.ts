@@ -18,6 +18,18 @@ export type InitActivatorParams = {
   type: 'TY_EZ' | 'TY_AP' | 'TY_QR';
 };
 
+export type InitQrCodeActivatorParams = {
+  ssid: string;
+  password: string;
+  token: string;
+  time: number;
+};
+
+export type GetActivatorTokenParams = {
+  homeId: number;
+  ssid: string;
+};
+
 export interface InitBluetoothActivatorParams {
   deviceId?: string;
   homeId: number;
@@ -57,4 +69,12 @@ export function getCurrentWifi(
 ) {
   // We need the Allow While Using App location permission to use this.
   return tuya.getCurrentWifi({}, success, error);
+}
+
+export function getInitActivatorToken(params: GetActivatorTokenParams): Promise<any> {
+  return tuya.getInitActivatorToken(params);
+}
+
+export function initQrGenerator(params: InitQrCodeActivatorParams): Promise<any> {
+  return tuya.initQrCodeActivator(params);
 }
