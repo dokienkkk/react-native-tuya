@@ -126,10 +126,17 @@ class TuyaDeviceModule(reactContext: ReactApplicationContext) : ReactContextBase
     @ReactMethod
     fun getDp(params: ReadableMap, promise: Promise) {
         if (ReactParamsCheck.checkParams(arrayOf(DEVID, DPID), params)) {
-            promise.resolve(getDevice(params.getString(DEVID) as String)?.getDp(
-                    params.getString(DPID),
-                    getIResultCallback(promise)
-            ))
+            (getDevice(params.getString(DEVID) as String)?.getDp(
+                params.getString(DPID),
+                object : IResultCallback {
+                    override fun onSuccess() {
+                        //
+                    }
+
+                    override fun onError(code: String?, error: String?) {
+                        //
+                    }
+                }))
         }
     }
 

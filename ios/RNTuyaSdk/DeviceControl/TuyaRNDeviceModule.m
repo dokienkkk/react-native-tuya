@@ -83,9 +83,11 @@ RCT_EXPORT_METHOD(getDp:(NSDictionary *)params resolver:(RCTPromiseResolveBlock)
   //读取dp点
   self.smartDevice  = [self smartDeviceWithParams:params];
   if (self.smartDevice) {
-    if (resolver) {
-      resolver(self.smartDevice.deviceModel.dps[dpId]?:@"");
-    }
+    [self.smartDevice publishDps:@{dpId:[NSNull null]} mode:TYDevicePublishModeAuto success:^{
+              NSLog(@"query dp success");
+        } failure:^(NSError *error) {
+              NSLog(@"query dp failure: %@", error);
+          }];
   }
 }
 
