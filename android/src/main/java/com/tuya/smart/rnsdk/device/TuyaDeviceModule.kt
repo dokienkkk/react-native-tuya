@@ -19,6 +19,7 @@ import com.tuya.smart.rnsdk.utils.Constant.getIResultCallback
 import com.tuya.smart.rnsdk.utils.ReactParamsCheck
 import com.tuya.smart.rnsdk.utils.TuyaReactUtils
 import com.tuya.smart.sdk.api.IDevListener
+import com.tuya.smart.sdk.api.IResultCallback
 import com.tuya.smart.sdk.api.ITuyaDevice
 
 
